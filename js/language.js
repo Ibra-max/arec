@@ -1,6 +1,19 @@
 'use strict';
 
 (function() {
+  function rebuildTitleLetters(text) {
+    const title = document.querySelector('.hero__title');
+    if (!title) return;
+    title.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+      span.className = 'hero__letter';
+      span.style.animationDelay = (i * 0.04) + 's';
+      title.appendChild(span);
+    }
+  }
+
   function setLanguage(lang) {
     const html = document.documentElement;
     html.setAttribute('lang', lang);
@@ -8,8 +21,17 @@
 
     // Swap text content for elements with data-ar/data-en
     document.querySelectorAll('[data-ar][data-en]').forEach(function(el) {
+      // Skip hero title — handled separately with letter animation
+      if (el.classList.contains('hero__title')) return;
       el.textContent = el.getAttribute('data-' + lang);
     });
+
+    // Rebuild hero title with letter animation
+    const heroTitle = document.querySelector('.hero__title');
+    if (heroTitle) {
+      const text = heroTitle.getAttribute('data-' + lang);
+      rebuildTitleLetters(text);
+    }
 
     // Swap placeholders for inputs
     document.querySelectorAll('[data-ar-placeholder][data-en-placeholder]').forEach(function(el) {
@@ -21,8 +43,13 @@
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
 
+    // Update CTA arrow direction
+    const arrow = document.querySelector('.hero__cta-arrow');
+    if (arrow) {
+      arrow.innerHTML = lang === 'ar' ? '&larr;' : '&rarr;';
+    }
+
     // Update page title
-    html.setAttribute('lang', lang);
     if (lang === 'ar') {
       document.title = 'AREC | أريك للهندسة والمقاولات';
     } else {
