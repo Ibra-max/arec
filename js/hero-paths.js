@@ -1,8 +1,13 @@
 'use strict';
 
 (function() {
-  const isMobile = window.innerWidth <= 768;
-  const pathCount = isMobile ? 18 : 36;
+  // Respect reduced motion preferences
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  var isMobile = window.innerWidth <= 768;
+  var pathCount = isMobile ? 18 : 36;
 
   function generatePaths(position) {
     return Array.from({ length: pathCount }, function(_, i) {
@@ -22,65 +27,105 @@
   }
 
   function createSVG(container, position) {
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 696 316');
     svg.setAttribute('fill', 'none');
-    svg.style.width = '100%';
-    svg.style.height = '100%';
+    svg.classList.add('hero__paths-svg');
 
-    const paths = generatePaths(position);
+    var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+    title.textContent = 'Background Paths';
+    svg.appendChild(title);
+
+    var paths = generatePaths(position);
+
     paths.forEach(function(p) {
-      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', p.d);
-      path.setAttribute('stroke', 'white');
-      path.setAttribute('stroke-opacity', p.strokeOpacity);
+      path.setAttribute('stroke', 'currentColor');
       path.setAttribute('stroke-width', p.strokeWidth);
-
-      // Dash animation
-      const len = 2000;
-      path.style.strokeDasharray = len;
-      path.style.strokeDashoffset = len;
-      path.style.animation = 'pathDraw ' + (3 + p.id * 0.08) + 's ease forwards ' + (p.id * 0.1) + 's, pathPulse ' + (4 + p.id * 0.05) + 's ease-in-out infinite ' + (3 + p.id * 0.1) + 's';
-      path.style.willChange = 'stroke-dashoffset, opacity';
-
+      path.setAttribute('stroke-opacity', p.strokeOpacity);
       svg.appendChild(path);
     });
 
     container.appendChild(svg);
+
+    // After DOM insertion, measure actual path lengths and apply animations
+    requestAnimationFrame(function() {
+      var pathElements = svg.querySelectorAll('path');
+      pathElements.forEach(function(pathEl, index) {
+        var totalLength = pathEl.getTotalLength();
+
+        // Set up stroke-dasharray for flowing animation
+        pathEl.style.strokeDasharray = totalLength;
+        pathEl.style.strokeDashoffset = totalLength * 0.7;
+
+        // Each path gets unique duration: 20 + random * 10
+        var duration = 20 + Math.random() * 10;
+
+        // CSS custom property for keyframe
+        pathEl.style.setProperty('--path-length', totalLength);
+
+        // Apply continuous flowing animation
+        pathEl.style.animation = 
+          'pathFlow ' + duration + 's linear infinite, ' +
+          'pathOpacity ' + duration + 's ease-in-out infinite';
+      });
+    });
   }
 
-  // Check reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
-
-  const leftContainer = document.querySelector('.hero__paths--left');
-  const rightContainer = document.querySelector('.hero__paths--right');
+  var leftContainer = document.querySelector('.hero__paths--left');
+  var rightContainer = document.querySelector('.hero__paths--right');
 
   if (leftContainer) createSVG(leftContainer, 1);
   if (rightContainer) createSVG(rightContainer, -1);
 
-  // Letter-by-letter title animation
-  const title = document.querySelector('.hero__title');
-  if (title) {
-    const text = title.textContent;
-    const arText = title.getAttribute('data-ar');
-    const enText = title.getAttribute('data-en');
-    title.textContent = '';
-    title.style.opacity = '1';
-    title.style.transform = 'none';
-    title.classList.remove('hero-anim', 'hero-anim--title');
+  // Letter-by-letter title animation (initial load)
+  var titleEl = document.querySelector('.hero__title');
+  if (titleEl) {
+    var text = titleEl.textContent;
+    var arText = titleEl.getAttribute('data-ar');
+    var enText = titleEl.getAttribute('data-en');
+    var currentLang = document.documentElement.getAttribute('lang') || 'ar';
 
-    for (let i = 0; i < text.length; i++) {
-      const span = document.createElement('span');
-      span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
-      span.className = 'hero__letter';
-      span.style.animationDelay = (0.3 + i * 0.04) + 's';
-      title.appendChild(span);
+    titleEl.textContent = '';
+    titleEl.style.opacity = '1';
+    titleEl.style.transform = 'none';
+    titleEl.classList.remove('hero-anim', 'hero-anim--title');
+
+    // For Arabic: animate whole words to preserve ligatures
+    if (currentLang === 'ar') {
+      var words = text.trim().split(/\s+/);
+      words.forEach(function(word, wordIndex) {
+        var wordSpan = document.createElement('span');
+        wordSpan.className = 'hero__word';
+        wordSpan.textContent = word;
+        wordSpan.style.opacity = '0';
+        wordSpan.style.transform = 'translateY(40px)';
+        wordSpan.style.animation = 'letterReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards';
+        wordSpan.style.animationDelay = (wordIndex * 0.15) + 's';
+        titleEl.appendChild(wordSpan);
+      });
+    } else {
+      // For English: word-grouped letter animation
+      var words = text.trim().split(/\s+/);
+      words.forEach(function(word, wordIndex) {
+        var wordSpan = document.createElement('span');
+        wordSpan.className = 'hero__word';
+
+        word.split('').forEach(function(letter, letterIndex) {
+          var letterSpan = document.createElement('span');
+          letterSpan.textContent = letter;
+          letterSpan.className = 'hero__letter';
+          letterSpan.style.animationDelay = (wordIndex * 0.1 + letterIndex * 0.03) + 's';
+          wordSpan.appendChild(letterSpan);
+        });
+
+        titleEl.appendChild(wordSpan);
+      });
     }
 
     // Store data for language switch rebuild
-    title.setAttribute('data-ar', arText);
-    title.setAttribute('data-en', enText);
+    titleEl.setAttribute('data-ar', arText);
+    titleEl.setAttribute('data-en', enText);
   }
 })();
