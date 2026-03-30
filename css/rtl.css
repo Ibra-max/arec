@@ -1,1 +1,23 @@
-/* RTL overrides — populated in v0.3.0 */
+/* RTL-specific overrides — minimal since base uses logical properties */
+
+/* Service cards: border on inline-start */
+[dir="rtl"] .service-card {
+  border-right: 3px solid var(--color-teal);
+  border-left: none;
+}
+
+[dir="ltr"] .service-card {
+  border-left: 3px solid var(--color-teal);
+  border-right: none;
+}
+
+/* Back to top button position */
+[dir="rtl"] .back-to-top {
+  left: var(--space-6);
+  right: auto;
+}
+
+[dir="ltr"] .back-to-top {
+  right: var(--space-6);
+  left: auto;
+}
