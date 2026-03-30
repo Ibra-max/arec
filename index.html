@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AREC | أريك للهندسة والمقاولات</title>
   <meta name="description" content="أريك للهندسة والمقاولات - خدمات التشييد والبناء والطاقة المتجددة منذ 2018">
+  <link rel="icon" href="assets/images/logo.jpeg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="assets/images/logo.jpeg">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -28,8 +30,25 @@
   <header class="nav" id="nav">
     <nav class="nav__inner container flex flex--between" aria-label="التنقل الرئيسي">
       <!-- Logo -->
-      <a href="#hero" class="nav__logo">
-        <img src="assets/images/logo.jpeg" alt="AREC" class="nav__logo-img" width="40" height="40">
+      <a href="#hero" class="nav__logo" aria-label="AREC للهندسة والمقاولات">
+        <svg viewBox="0 0 250 80" class="nav__logo-svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <mask id="cutA-nav">
+              <rect width="100%" height="100%" fill="white" />
+              <path d="M 25 20 L 45 70" stroke="black" stroke-width="4" />
+            </mask>
+            <mask id="cutC-nav">
+              <rect width="100%" height="100%" fill="white" />
+              <path d="M 190 20 Q 200 45 195 70 Q 180 50 190 20" fill="black" />
+            </mask>
+          </defs>
+          <text x="50%" y="60" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="800" font-size="64" fill="var(--color-white)" letter-spacing="1">
+            <tspan mask="url(#cutA-nav)">A</tspan>
+            <tspan>R</tspan>
+            <tspan>E</tspan>
+            <tspan mask="url(#cutC-nav)">C</tspan>
+          </text>
+        </svg>
       </a>
 
       <!-- Nav Links -->
@@ -535,7 +554,24 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__logo">
-            <img src="assets/images/logo.jpeg" alt="AREC" width="60" height="60" loading="lazy">
+            <svg viewBox="0 0 250 80" class="footer__logo-svg" preserveAspectRatio="xMidYMid meet" aria-label="AREC Logo">
+              <defs>
+                <mask id="cutA-footer">
+                  <rect width="100%" height="100%" fill="white" />
+                  <path d="M 25 20 L 45 70" stroke="black" stroke-width="4" />
+                </mask>
+                <mask id="cutC-footer">
+                  <rect width="100%" height="100%" fill="white" />
+                  <path d="M 190 20 Q 200 45 195 70 Q 180 50 190 20" fill="black" />
+                </mask>
+              </defs>
+              <text x="50%" y="60" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="800" font-size="64" fill="var(--color-white)" letter-spacing="1">
+                <tspan mask="url(#cutA-footer)">A</tspan>
+                <tspan>R</tspan>
+                <tspan>E</tspan>
+                <tspan mask="url(#cutC-footer)">C</tspan>
+              </text>
+            </svg>
           </div>
           <p class="footer__tagline" data-ar="أريك للهندسة والمقاولات" data-en="AREC Constructions &amp; Engineering">أريك للهندسة والمقاولات</p>
         </div>
