@@ -811,13 +811,9 @@
   animation: marqueeRight var(--marquee-duration, 25s) linear infinite;
 }
 
-/* Hover: reverse + speed up */
-.clients__marquee[data-direction="left"]:hover .clients__track {
-  animation: marqueeRight calc(var(--marquee-duration, 30s) * 0.4) linear infinite;
-}
-
-.clients__marquee[data-direction="right"]:hover .clients__track {
-  animation: marqueeLeft calc(var(--marquee-duration, 25s) * 0.4) linear infinite;
+/* Pause animation on hover instead of reversing, so user can actually see the logo clearly */
+.clients__marquee:hover .clients__track {
+  animation-play-state: paused;
 }
 
 @keyframes marqueeLeft {
@@ -856,7 +852,10 @@
 .client-logo:hover {
   filter: grayscale(0);
   opacity: 1;
-  transform: scale(1.08);
+  transform: scale(1.15);
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+  position: relative;
 }
 
 /* ---- Mobile: wrap into grid ---- */
