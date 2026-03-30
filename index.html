@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/rtl.css">
   <link rel="stylesheet" href="css/animations.css">
   <script src="js/nav.js" defer></script>
+  <script src="js/hero-paths.js" defer></script>
   <script src="js/scroll.js" defer></script>
   <script src="js/counters.js" defer></script>
   <script src="js/portfolio.js" defer></script>
@@ -26,8 +27,7 @@
     <nav class="nav__inner container flex flex--between" aria-label="التنقل الرئيسي">
       <!-- Logo -->
       <a href="#hero" class="nav__logo">
-        <!-- DECISION: Using text logo since logo.png/svg not yet provided -->
-        <span class="nav__logo-text" data-ar="AREC" data-en="AREC">AREC</span>
+        <img src="assets/images/logo.jpeg" alt="AREC" class="nav__logo-img" width="40" height="40">
       </a>
 
       <!-- Nav Links -->
@@ -60,12 +60,11 @@
   <main id="main">
     <!-- Hero Section -->
     <section id="hero" class="hero">
+      <div class="hero__paths hero__paths--left" aria-hidden="true"></div>
+      <div class="hero__paths hero__paths--right" aria-hidden="true"></div>
       <div class="hero__content">
         <div class="hero__logo-wrap hero-anim hero-anim--logo">
-          <!-- DECISION: Using text placeholder until logo.png/svg is provided -->
-          <div class="hero__logo-placeholder">
-            <span class="hero__logo-a">A</span><span class="hero__logo-rec">REC</span>
-          </div>
+          <img src="assets/images/logo.jpeg" alt="شعار أريك للهندسة والمقاولات" class="hero__logo-img" width="280" height="280" loading="eager">
         </div>
         <h1 class="hero__title hero-anim hero-anim--title" data-ar="أريك للهندسة والمقاولات" data-en="AREC Constructions &amp; Engineering">أريك للهندسة والمقاولات</h1>
         <p class="hero__subtitle hero-anim hero-anim--subtitle" data-ar="نبني المستقبل بأيدٍ خبيرة... منذ 2018" data-en="Building the future with expert hands... since 2018">نبني المستقبل بأيدٍ خبيرة... منذ 2018</p>
@@ -110,7 +109,9 @@
           </div>
         </div>
 
-        <a href="#services" class="hero__cta hero-anim hero-anim--cta" data-ar="تعرّف على خدماتنا" data-en="Explore Our Services">تعرّف على خدماتنا</a>
+        <div class="hero__cta-wrap hero-anim hero-anim--cta">
+          <a href="#services" class="hero__cta" data-ar="تعرّف على خدماتنا" data-en="Explore Our Services">تعرّف على خدماتنا<span class="hero__cta-arrow" aria-hidden="true">&larr;</span></a>
+        </div>
       </div>
       <div class="hero__scroll-indicator" aria-hidden="true">
         <span data-ar="اكتشف المزيد" data-en="Discover More">اكتشف المزيد</span>
@@ -233,74 +234,116 @@
           <button class="portfolio__tab" role="tab" data-category="structural" aria-selected="false" data-ar="الهندسة الإنشائية" data-en="Structural">الهندسة الإنشائية</button>
           <button class="portfolio__tab" role="tab" data-category="energy" aria-selected="false" data-ar="الطاقة المتجددة" data-en="Green Energy">الطاقة المتجددة</button>
         </div>
-        <div class="portfolio__grid grid grid--3 scroll-reveal-stagger">
+        <div class="portfolio__grid scroll-reveal-stagger">
           <!-- Architectural -->
           <div class="portfolio__item" data-category="architectural">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="فيلات سكنية حديثة" data-en="Modern Residential Villas">فيلات سكنية حديثة</div>
+              <img src="assets/images/portfolio/architecture/arch_01.jpeg" alt="فيلات سكنية حديثة" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ فيلات سكنية حديثة" data-en="Design and construction of modern residential villas">تصميم وتنفيذ فيلات سكنية حديثة</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="architectural">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="عمائر وأبراج سكنية" data-en="Residential Buildings &amp; Towers">عمائر وأبراج سكنية</div>
+              <img src="assets/images/portfolio/architecture/arch_07.jpeg" alt="عمائر وأبراج سكنية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ عمائر وأبراج سكنية حديثة" data-en="Design and construction of modern buildings and towers">تصميم وتنفيذ عمائر وأبراج سكنية حديثة</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="architectural">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="التصاميم الداخلية والديكور" data-en="Interior Design &amp; Decoration">التصاميم الداخلية والديكور</div>
+              <img src="assets/images/portfolio/architecture/arch_17.jpeg" alt="التصاميم الداخلية والديكور" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="التصاميم الداخلية والديكور" data-en="Interior design and decoration">التصاميم الداخلية والديكور</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="architectural">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="تصاميم الحدائق والمنتزهات" data-en="Parks &amp; Gardens Design">تصاميم الحدائق والمنتزهات</div>
+              <img src="assets/images/portfolio/architecture/arch_09.jpeg" alt="تصاميم الحدائق والمنتزهات" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصاميم الحدائق والمنتزهات" data-en="Parks and gardens design">تصاميم الحدائق والمنتزهات</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/architecture/arch_18.jpeg" alt="ديكور مطاعم رويال بروستر" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="أعمال الديكور لمطاعم رويال بروستر" data-en="Royal Broaster restaurants decoration">أعمال الديكور لمطاعم رويال بروستر</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/architecture/arch_25.jpeg" alt="تصميم مكتب العنقزي" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ ديكورات مكتب العنقزي للسفريات" data-en="Al-Anqazi travel office decoration">تصميم وتنفيذ ديكورات مكتب العنقزي للسفريات</span></div>
             </div>
           </div>
           <!-- Structural -->
           <div class="portfolio__item" data-category="structural" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="أعمال الفولاذ والهناجر" data-en="Steel &amp; Hangars">أعمال الفولاذ والهناجر</div>
+              <img src="assets/images/portfolio/structural/struct_01.jpeg" alt="أعمال الفولاذ والهناجر" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ أعمال الفولاذ والهناجر" data-en="Design and construction of steel works and hangars">تصميم وتنفيذ أعمال الفولاذ والهناجر</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="structural" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="خزانات المياه" data-en="Water Tanks">خزانات المياه</div>
+              <img src="assets/images/portfolio/structural/struct_04.jpeg" alt="خزانات المياه" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ خزانات المياه" data-en="Design and construction of water tanks">تصميم وتنفيذ خزانات المياه</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="structural" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="الأعمال الخرسانية" data-en="Concrete Works">الأعمال الخرسانية</div>
+              <img src="assets/images/portfolio/structural/struct_14.jpeg" alt="الأعمال الخرسانية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ الأعمال الخرسانية" data-en="Design and construction of concrete works">تصميم وتنفيذ الأعمال الخرسانية</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="structural" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="إستشارات هندسية" data-en="Engineering Consultations">إستشارات هندسية</div>
+              <img src="assets/images/portfolio/structural/struct_20.jpeg" alt="إستشارات هندسية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="إستشارات هندسية" data-en="Engineering consultations">إستشارات هندسية</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/structural/struct_29.jpeg" alt="أعمال متنوعة" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ أعمال متنوعة" data-en="Design and construction of various works">تصميم وتنفيذ أعمال متنوعة</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/structural/struct_31.jpeg" alt="أعمال إنشائية" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="أعمال إنشائية متنوعة" data-en="Various structural works">أعمال إنشائية متنوعة</span></div>
             </div>
           </div>
           <!-- Energy -->
           <div class="portfolio__item" data-category="energy" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="مضخات شمسية" data-en="Solar Pumps">مضخات شمسية</div>
+              <img src="assets/images/portfolio/solar/solar_01.jpeg" alt="مضخات شمسية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="مضخات شمسية" data-en="Solar pumps">مضخات شمسية</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="energy" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="أنظمة طاقة شمسية" data-en="Solar Energy Systems">أنظمة طاقة شمسية</div>
+              <img src="assets/images/portfolio/solar/solar_08.jpeg" alt="أنظمة طاقة شمسية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="أنظمة طاقة شمسية للمدارس والمستشفيات" data-en="Solar energy systems for schools and hospitals">أنظمة طاقة شمسية للمدارس والمستشفيات</span></div>
             </div>
           </div>
           <div class="portfolio__item" data-category="energy" style="display:none;">
             <div class="portfolio__img-wrap">
-              <div class="portfolio__placeholder" data-ar="لوحات كهربائية" data-en="Electrical Panels">لوحات كهربائية</div>
+              <img src="assets/images/portfolio/solar/solar_13.jpeg" alt="لوحات كهربائية" loading="lazy">
               <div class="portfolio__overlay"><span data-ar="أعمال اللوحات الكهربائية" data-en="Electrical panel works">أعمال اللوحات الكهربائية</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/solar/solar_03.jpeg" alt="مشاريع طاقة شمسية" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="مشاريع الطاقة المتجددة" data-en="Renewable energy projects">مشاريع الطاقة المتجددة</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/solar/solar_14.jpeg" alt="تركيبات شمسية" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="تركيبات الطاقة الشمسية" data-en="Solar energy installations">تركيبات الطاقة الشمسية</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <img src="assets/images/portfolio/solar/solar_06.jpeg" alt="منظومات شمسية" loading="lazy">
+              <div class="portfolio__overlay"><span data-ar="توريد وتركيب منظومات شمسية" data-en="Supply and installation of solar systems">توريد وتركيب منظومات شمسية</span></div>
             </div>
           </div>
         </div>
@@ -340,33 +383,33 @@
 
         <h3 class="clients__category" data-ar="المنظمات الدولية" data-en="International Organizations">المنظمات الدولية</h3>
         <div class="clients__grid grid grid--4 scroll-reveal-stagger">
-          <div class="client-logo"><span>FAO</span></div>
-          <div class="client-logo"><span>UNOPS</span></div>
-          <div class="client-logo"><span>WFP</span></div>
-          <div class="client-logo"><span>UNHCR</span></div>
-          <div class="client-logo"><span>CARE</span></div>
-          <div class="client-logo"><span>ZOA</span></div>
-          <div class="client-logo"><span>BFD</span></div>
-          <div class="client-logo"><span>ADRA</span></div>
-          <div class="client-logo"><span>OMB-Y</span></div>
-          <div class="client-logo"><span>IRC</span></div>
-          <div class="client-logo"><span>Islamic Relief</span></div>
-          <div class="client-logo"><span>Oxfam</span></div>
-          <div class="client-logo"><span>SFD</span></div>
-          <div class="client-logo"><span>ARD</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_01.png" alt="FAO" loading="lazy"><span>FAO</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_02.png" alt="UNOPS" loading="lazy"><span>UNOPS</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_03.png" alt="WFP" loading="lazy"><span>WFP</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_04.jpeg" alt="UNHCR" loading="lazy"><span>UNHCR</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_05.png" alt="CARE" loading="lazy"><span>CARE</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_06.png" alt="ZOA" loading="lazy"><span>ZOA</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_07.png" alt="BFD" loading="lazy"><span>BFD</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_08.png" alt="ADRA" loading="lazy"><span>ADRA</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_09.jpeg" alt="OMB-Y" loading="lazy"><span>OMB-Y</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_10.jpeg" alt="IRC" loading="lazy"><span>IRC</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_11.png" alt="Islamic Relief" loading="lazy"><span>Islamic Relief</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_12.png" alt="Oxfam" loading="lazy"><span>Oxfam</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_13.jpeg" alt="SFD" loading="lazy"><span>SFD</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_14.jpeg" alt="ARD" loading="lazy"><span>ARD</span></div>
         </div>
 
         <h3 class="clients__category" data-ar="القطاع الخاص" data-en="Private Sector">القطاع الخاص</h3>
         <div class="clients__grid grid grid--4 scroll-reveal-stagger">
-          <div class="client-logo"><span data-ar="الكبوس" data-en="Al-Kbous">الكبوس</span></div>
-          <div class="client-logo"><span data-ar="العقيق" data-en="Al-Aqeeq">العقيق</span></div>
-          <div class="client-logo"><span data-ar="سمارت سكان" data-en="SmartScan">سمارت سكان</span></div>
-          <div class="client-logo"><span data-ar="المختبرات الدولية الحديثة" data-en="Modern International Labs">المختبرات الدولية الحديثة</span></div>
-          <div class="client-logo"><span data-ar="تجدد" data-en="Tagadod">تجدد</span></div>
-          <div class="client-logo"><span data-ar="باور سيتي" data-en="Power City">باور سيتي</span></div>
-          <div class="client-logo"><span data-ar="مؤسسة القسم للتجارة" data-en="Al-Qasm Trading">مؤسسة القسم للتجارة</span></div>
-          <div class="client-logo"><span data-ar="نيو لاب" data-en="New Lab">نيو لاب</span></div>
-          <div class="client-logo"><span data-ar="سام سكان" data-en="Sam Scan">سام سكان</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_15.png" alt="الكبوس" loading="lazy"><span data-ar="الكبوس" data-en="Al-Kbous">الكبوس</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_16.jpeg" alt="العقيق" loading="lazy"><span data-ar="العقيق" data-en="Al-Aqeeq">العقيق</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_17.png" alt="سمارت سكان" loading="lazy"><span data-ar="سمارت سكان" data-en="SmartScan">سمارت سكان</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_18.png" alt="المختبرات الدولية الحديثة" loading="lazy"><span data-ar="المختبرات الدولية الحديثة" data-en="Modern International Labs">المختبرات الدولية الحديثة</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_19.jpeg" alt="تجدد" loading="lazy"><span data-ar="تجدد" data-en="Tagadod">تجدد</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_20.png" alt="باور سيتي" loading="lazy"><span data-ar="باور سيتي" data-en="Power City">باور سيتي</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_21.jpeg" alt="مؤسسة القسم للتجارة" loading="lazy"><span data-ar="مؤسسة القسم للتجارة" data-en="Al-Qasm Trading">مؤسسة القسم للتجارة</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_22.png" alt="نيو لاب" loading="lazy"><span data-ar="نيو لاب" data-en="New Lab">نيو لاب</span></div>
+          <div class="client-logo"><img src="assets/images/clients/client_23.jpeg" alt="سام سكان" loading="lazy"><span data-ar="سام سكان" data-en="Sam Scan">سام سكان</span></div>
         </div>
       </div>
     </section>
@@ -399,15 +442,15 @@
           <div class="contact__info">
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <span data-ar="هاتف: 575 686 1 967+" data-en="Phone: +967 1 686 575">هاتف: 575 686 1 967+</span>
+              <span data-ar="هاتف:" data-en="Phone:"></span> <a href="tel:+96716865575" class="phone-number" dir="ltr">+967 1 686 575</a>
             </div>
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-              <span data-ar="جوال: 776566575 967+" data-en="Mobile: +967 776566575">جوال: 776566575 967+</span>
+              <span data-ar="جوال:" data-en="Mobile:"></span> <a href="tel:+967776566575" class="phone-number" dir="ltr">+967 776566575</a>
             </div>
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:info@arec-ye.com">info@arec-ye.com</a>
+              <a href="mailto:info@arec-ye.com" class="email-address" dir="ltr">info@arec-ye.com</a>
             </div>
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -448,7 +491,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__logo">
-            <span class="footer__logo-a">A</span><span class="footer__logo-rec">REC</span>
+            <img src="assets/images/logo.jpeg" alt="AREC" width="60" height="60" loading="lazy">
           </div>
           <p class="footer__tagline" data-ar="أريك للهندسة والمقاولات" data-en="AREC Constructions &amp; Engineering">أريك للهندسة والمقاولات</p>
         </div>
@@ -464,9 +507,9 @@
         </div>
         <div class="footer__contact">
           <h4 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h4>
-          <p>+967 1 686 575</p>
-          <p>+967 776566575</p>
-          <p><a href="mailto:info@arec-ye.com">info@arec-ye.com</a></p>
+          <p><a href="tel:+96716865575" class="phone-number" dir="ltr">+967 1 686 575</a></p>
+          <p><a href="tel:+967776566575" class="phone-number" dir="ltr">+967 776566575</a></p>
+          <p><a href="mailto:info@arec-ye.com" class="email-address" dir="ltr">info@arec-ye.com</a></p>
           <p data-ar="اليمن - صنعاء - بيت بوس" data-en="Yemen - Sanaa - Baitboos">اليمن - صنعاء - بيت بوس</p>
         </div>
       </div>

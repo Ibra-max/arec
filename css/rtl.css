@@ -21,3 +21,28 @@
   right: var(--space-6);
   left: auto;
 }
+
+/* Amendment 4: Force LTR on phone numbers, emails, URLs in RTL */
+.phone-number,
+.email-address,
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+[dir="rtl"] .contact__info-item .phone-number,
+[dir="rtl"] .contact__info-item .email-address {
+  text-align: right;
+}
+
+/* CTA arrow direction */
+[dir="rtl"] .hero__cta-arrow {
+  margin-right: var(--space-2);
+  margin-left: 0;
+}
+
+[dir="ltr"] .hero__cta-arrow {
+  margin-left: var(--space-2);
+  margin-right: 0;
+}
