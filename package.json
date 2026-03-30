@@ -1,0 +1,27 @@
+{
+  "name": "arec-website",
+  "version": "1.0.0",
+  "description": "Bilingual (Arabic/English) single-page marketing website for AREC Constructions & Engineering.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "netlify dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ibra-max/arec.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ibra-max/arec/issues"
+  },
+  "homepage": "https://github.com/Ibra-max/arec#readme",
+  "dependencies": {
+    "nodemailer": "^8.0.4"
+  },
+  "devDependencies": {
+    "netlify-cli": "^24.8.1"
+  }
+}

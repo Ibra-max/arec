@@ -17,6 +17,7 @@
   <script src="js/counters.js" defer></script>
   <script src="js/portfolio.js" defer></script>
   <script src="js/language.js" defer></script>
+  <script src="js/contact.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -502,7 +503,7 @@
               خريطة الموقع
             </div>
           </div>
-          <form class="contact__form" action="mailto:info@arec-ye.com" method="POST" enctype="text/plain">
+          <form class="contact__form" id="contactForm">
             <div class="contact__field">
               <label for="name" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
               <input type="text" id="name" name="name" required data-ar-placeholder="أدخل اسمك الكامل" data-en-placeholder="Enter your full name" placeholder="أدخل اسمك الكامل">
@@ -519,7 +520,8 @@
               <label for="message" data-ar="الرسالة" data-en="Message">الرسالة</label>
               <textarea id="message" name="message" rows="5" required data-ar-placeholder="اكتب رسالتك هنا..." data-en-placeholder="Write your message here..." placeholder="اكتب رسالتك هنا..."></textarea>
             </div>
-            <button type="submit" class="contact__submit" data-ar="إرسال" data-en="Send">إرسال</button>
+            <div id="formMessage" class="contact__message" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 4px; font-weight: bold;"></div>
+            <button type="submit" class="contact__submit" id="submitBtn" data-ar="إرسال" data-en="Send">إرسال</button>
           </form>
         </div>
       </div>
