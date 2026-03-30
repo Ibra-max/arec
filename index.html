@@ -11,8 +11,474 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/rtl.css">
   <link rel="stylesheet" href="css/animations.css">
+  <script src="js/nav.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script src="js/counters.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+  <script src="js/language.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a href="#main" class="skip-link" data-ar="تخطي إلى المحتوى" data-en="Skip to content">تخطي إلى المحتوى</a>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <nav class="nav__inner container flex flex--between" aria-label="التنقل الرئيسي">
+      <!-- Logo -->
+      <a href="#hero" class="nav__logo">
+        <!-- DECISION: Using text logo since logo.png/svg not yet provided -->
+        <span class="nav__logo-text" data-ar="AREC" data-en="AREC">AREC</span>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+        <li><a href="#vision" class="nav__link" data-ar="رؤيتنا" data-en="Vision">رؤيتنا</a></li>
+        <li><a href="#services" class="nav__link" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+        <li><a href="#portfolio" class="nav__link" data-ar="أعمالنا" data-en="Portfolio">أعمالنا</a></li>
+        <li><a href="#featured" class="nav__link" data-ar="مشاريعنا" data-en="Projects">مشاريعنا</a></li>
+        <li><a href="#clients" class="nav__link" data-ar="عملاؤنا" data-en="Clients">عملاؤنا</a></li>
+        <li><a href="#contact" class="nav__link" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+      </ul>
+
+      <!-- Language Toggle -->
+      <div class="nav__lang">
+        <button class="lang-btn active" data-lang="ar" aria-label="العربية">AR</button>
+        <span class="nav__lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button class="nav__hamburger" id="navHamburger" aria-label="القائمة" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <div class="hero__logo-wrap hero-anim hero-anim--logo">
+          <!-- DECISION: Using text placeholder until logo.png/svg is provided -->
+          <div class="hero__logo-placeholder">
+            <span class="hero__logo-a">A</span><span class="hero__logo-rec">REC</span>
+          </div>
+        </div>
+        <h1 class="hero__title hero-anim hero-anim--title" data-ar="أريك للهندسة والمقاولات" data-en="AREC Constructions &amp; Engineering">أريك للهندسة والمقاولات</h1>
+        <p class="hero__subtitle hero-anim hero-anim--subtitle" data-ar="نبني المستقبل بأيدٍ خبيرة... منذ 2018" data-en="Building the future with expert hands... since 2018">نبني المستقبل بأيدٍ خبيرة... منذ 2018</p>
+
+        <div class="hero__pillars hero-anim hero-anim--pillars">
+          <div class="hero__pillar">
+            <svg class="hero__pillar-icon" viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="8" y="28" width="48" height="32" rx="2"/>
+              <polygon points="32,4 4,28 60,28"/>
+              <rect x="24" y="40" width="16" height="20"/>
+              <rect x="14" y="34" width="8" height="8"/>
+              <rect x="42" y="34" width="8" height="8"/>
+            </svg>
+            <span data-ar="الهندسة المعمارية" data-en="Architectural">الهندسة المعمارية</span>
+          </div>
+          <div class="hero__pillar">
+            <svg class="hero__pillar-icon" viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="28" y="16" width="8" height="44"/>
+              <rect x="12" y="52" width="40" height="8" rx="2"/>
+              <line x1="32" y1="16" x2="52" y2="28"/>
+              <line x1="52" y1="28" x2="52" y2="40"/>
+              <rect x="46" y="40" width="12" height="8"/>
+              <line x1="32" y1="4" x2="32" y2="16"/>
+              <circle cx="32" cy="4" r="2"/>
+            </svg>
+            <span data-ar="الهندسة الإنشائية" data-en="Structural">الهندسة الإنشائية</span>
+          </div>
+          <div class="hero__pillar">
+            <svg class="hero__pillar-icon" viewBox="0 0 64 64" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="32" width="56" height="24" rx="2"/>
+              <line x1="20" y1="32" x2="20" y2="56"/>
+              <line x1="36" y1="32" x2="36" y2="56"/>
+              <line x1="52" y1="32" x2="52" y2="56"/>
+              <circle cx="44" cy="14" r="10"/>
+              <line x1="44" y1="8" x2="44" y2="14"/>
+              <line x1="44" y1="14" x2="50" y2="14"/>
+              <line x1="38" y1="6" x2="38" y2="4"/>
+              <line x1="50" y1="6" x2="52" y2="4"/>
+              <line x1="54" y1="12" x2="56" y2="10"/>
+            </svg>
+            <span data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</span>
+          </div>
+        </div>
+
+        <a href="#services" class="hero__cta hero-anim hero-anim--cta" data-ar="تعرّف على خدماتنا" data-en="Explore Our Services">تعرّف على خدماتنا</a>
+      </div>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span data-ar="اكتشف المزيد" data-en="Discover More">اكتشف المزيد</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about scroll-reveal">
+      <div class="container">
+        <div class="about__layout">
+          <div class="about__text">
+            <h2 class="section-title" data-ar="من نحن" data-en="About Us">من نحن</h2>
+            <p class="about__body" data-ar="تقدم أريك للتجارة والمقاولات والخدمات الهندسية خدمات التشييد والبناء والطاقة المتجددة منذ العام 2018. من خلال كادر هندسي واداري مؤهل على أعلى المستويات استطعنا إنجاز العديد من المشاريع الهندسية وفقاً لمعايير الجودة العالمية. عملنا مع العديد من الجهات الحكومية والمنظمات الدولية والشركات الخاصة لتغطي مشاريعنا جميع المحافظات اليمنية." data-en="AREC construction and engineering has been providing construction, building services and renewable energy since 2018. Through a qualified engineering and administrative staff at the highest levels, we were able to complete many engineering projects in accordance with international quality standards. We have worked with many government agencies, international organizations and private companies to cover all Yemeni governorates.">تقدم أريك للتجارة والمقاولات والخدمات الهندسية خدمات التشييد والبناء والطاقة المتجددة منذ العام 2018. من خلال كادر هندسي واداري مؤهل على أعلى المستويات استطعنا إنجاز العديد من المشاريع الهندسية وفقاً لمعايير الجودة العالمية. عملنا مع العديد من الجهات الحكومية والمنظمات الدولية والشركات الخاصة لتغطي مشاريعنا جميع المحافظات اليمنية.</p>
+            <p class="about__body about__body--second" data-ar="انتهجت شركة أريك استراتيجية ثابته من اجل تحقيق التنمية وكسب ثقة عملائها من خلال انتقاء أجود المواد وتطبيق المواصفات الأكثر صرامة والاهتمام بأدق التفاصيل، وهو ما حقق النمو للشركة ومكّنها من توسيع أنشطتها. تتنوع خدماتنا لتشمل الاستشارات والتصاميم، والمقاولات، وتوفير خدمات ما بعد البيع في مجالات الهندسة المعمارية والديكور، الكهرباء والطاقة البديلة، الاعمال المدنية والانشائية." data-en="AREC has adopted a consistent strategy in order to achieve development and gain the trust of its customers by selecting the finest materials, applying the most stringent specifications and paying attention to detail, which has achieved growth for the company and enabled it to expand its activities.">انتهجت شركة أريك استراتيجية ثابته من اجل تحقيق التنمية وكسب ثقة عملائها من خلال انتقاء أجود المواد وتطبيق المواصفات الأكثر صرامة والاهتمام بأدق التفاصيل، وهو ما حقق النمو للشركة ومكّنها من توسيع أنشطتها. تتنوع خدماتنا لتشمل الاستشارات والتصاميم، والمقاولات، وتوفير خدمات ما بعد البيع في مجالات الهندسة المعمارية والديكور، الكهرباء والطاقة البديلة، الاعمال المدنية والانشائية.</p>
+          </div>
+          <div class="about__deco">
+            <span class="about__year">2018</span>
+            <div class="about__geometric">
+              <div class="about__geo-square about__geo-square--1"></div>
+              <div class="about__geo-square about__geo-square--2"></div>
+              <div class="about__geo-square about__geo-square--3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vision" class="vision scroll-reveal">
+      <div class="container container--narrow">
+        <div class="vision__cards">
+          <div class="vision__card scroll-reveal-stagger">
+            <svg class="vision__icon" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="var(--color-teal)" stroke-width="2" aria-hidden="true">
+              <circle cx="24" cy="24" r="20"/>
+              <circle cx="24" cy="24" r="12"/>
+              <circle cx="24" cy="24" r="4"/>
+              <line x1="24" y1="0" x2="24" y2="8"/>
+              <line x1="24" y1="40" x2="24" y2="48"/>
+              <line x1="0" y1="24" x2="8" y2="24"/>
+              <line x1="40" y1="24" x2="48" y2="24"/>
+            </svg>
+            <h3 data-ar="رؤية الشركة" data-en="Our Vision">رؤية الشركة</h3>
+            <p data-ar="أن نكون المتصدرين في تقديم الخدمات الهندسية ذات الجودة العالية." data-en="To be the leader in providing high quality engineering services.">أن نكون المتصدرين في تقديم الخدمات الهندسية ذات الجودة العالية.</p>
+          </div>
+          <div class="vision__card scroll-reveal-stagger">
+            <svg class="vision__icon" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="var(--color-teal)" stroke-width="2" aria-hidden="true">
+              <circle cx="24" cy="24" r="20"/>
+              <polygon points="24,8 20,20 8,20 18,28 14,40 24,32 34,40 30,28 40,20 28,20"/>
+            </svg>
+            <h3 data-ar="رسالة الشركة" data-en="Our Mission">رسالة الشركة</h3>
+            <p data-ar="تسخير كافة الإمكانيات المتاحة لتقديم أفضل الخدمات الهندسية وابتكار الحلول لتحقيق مشاريع أكثر كفاءة ونجاحاً تلبي طموحات وتطلعات عملائنا." data-en="Harnessing all available capabilities to provide the best engineering services and innovate solutions to achieve more efficient and successful projects that meet the aspirations of our customers.">تسخير كافة الإمكانيات المتاحة لتقديم أفضل الخدمات الهندسية وابتكار الحلول لتحقيق مشاريع أكثر كفاءة ونجاحاً تلبي طموحات وتطلعات عملائنا.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title" data-ar="مجالات عمل الشركة" data-en="Our Services">مجالات عمل الشركة</h2>
+        <div class="services__grid grid grid--4 scroll-reveal-stagger">
+          <div class="service-card">
+            <span class="service-card__num">01</span>
+            <svg class="service-card__icon" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="var(--color-orange)" stroke-width="1.5" aria-hidden="true">
+              <path d="M4 28h24M8 28V14l8-8 8 8v14M14 28v-8h4v8"/>
+              <rect x="11" y="16" width="4" height="4"/>
+              <rect x="17" y="16" width="4" height="4"/>
+            </svg>
+            <h3 data-ar="الاستشارات والتصاميم" data-en="Consultations &amp; Design">الاستشارات والتصاميم</h3>
+            <p data-ar="تقديم الإستشارات والتصاميم والدراسات الهندسية بجميع أقسامها." data-en="Providing consultations, designs and engineering studies in all its departments.">تقديم الإستشارات والتصاميم والدراسات الهندسية بجميع أقسامها.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__num">02</span>
+            <svg class="service-card__icon" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="var(--color-orange)" stroke-width="1.5" aria-hidden="true">
+              <rect x="6" y="18" width="20" height="12" rx="1"/>
+              <rect x="10" y="10" width="12" height="8"/>
+              <line x1="16" y1="4" x2="16" y2="10"/>
+              <line x1="4" y1="30" x2="28" y2="30"/>
+            </svg>
+            <h3 data-ar="المقاولات الهندسية" data-en="Engineering Contracting">المقاولات الهندسية</h3>
+            <p data-ar="أعمال المقاولات الهندسية العامة والخاصة في مجالات الكهرباء، والانشاءات، والعمارة، والديكور." data-en="General and private engineering contracting works in the fields of electricity, construction, architecture, and decoration.">أعمال المقاولات الهندسية العامة والخاصة في مجالات الكهرباء، والانشاءات، والعمارة، والديكور.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__num">03</span>
+            <svg class="service-card__icon" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="var(--color-orange)" stroke-width="1.5" aria-hidden="true">
+              <rect x="4" y="16" width="24" height="12" rx="1"/>
+              <line x1="12" y1="16" x2="12" y2="28"/>
+              <line x1="20" y1="16" x2="20" y2="28"/>
+              <circle cx="24" cy="8" r="5"/>
+              <line x1="24" y1="5" x2="24" y2="8"/>
+              <line x1="24" y1="8" x2="27" y2="8"/>
+            </svg>
+            <h3 data-ar="الطاقة الشمسية" data-en="Solar Energy">الطاقة الشمسية</h3>
+            <p data-ar="توريدات ومبيعات كافة منتجات الطاقة الشمسية وتقديم خدمات ما بعد البيع." data-en="Supplies and sales of all solar energy products and providing after-sales services.">توريدات ومبيعات كافة منتجات الطاقة الشمسية وتقديم خدمات ما بعد البيع.</p>
+          </div>
+          <div class="service-card">
+            <span class="service-card__num">04</span>
+            <svg class="service-card__icon" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="var(--color-orange)" stroke-width="1.5" aria-hidden="true">
+              <rect x="4" y="8" width="24" height="16" rx="1"/>
+              <line x1="4" y1="14" x2="28" y2="14"/>
+              <rect x="8" y="18" width="6" height="4"/>
+              <rect x="18" y="18" width="6" height="4"/>
+              <line x1="10" y1="24" x2="10" y2="28"/>
+              <line x1="22" y1="24" x2="22" y2="28"/>
+            </svg>
+            <h3 data-ar="الأثاث والتجهيزات" data-en="Furniture &amp; Equipment">الأثاث والتجهيزات</h3>
+            <p data-ar="أعمال الأثاث المنزلي والديكورات الخشبية والتجهيزات المكتبية." data-en="Home furniture, wooden decorations and office equipment.">أعمال الأثاث المنزلي والديكورات الخشبية والتجهيزات المكتبية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+      <div class="container container--wide">
+        <h2 class="section-title" data-ar="أعمالنا" data-en="Our Work">أعمالنا</h2>
+        <div class="portfolio__tabs" role="tablist">
+          <button class="portfolio__tab active" role="tab" data-category="architectural" aria-selected="true" data-ar="الهندسة المعمارية" data-en="Architecture">الهندسة المعمارية</button>
+          <button class="portfolio__tab" role="tab" data-category="structural" aria-selected="false" data-ar="الهندسة الإنشائية" data-en="Structural">الهندسة الإنشائية</button>
+          <button class="portfolio__tab" role="tab" data-category="energy" aria-selected="false" data-ar="الطاقة المتجددة" data-en="Green Energy">الطاقة المتجددة</button>
+        </div>
+        <div class="portfolio__grid grid grid--3 scroll-reveal-stagger">
+          <!-- Architectural -->
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="فيلات سكنية حديثة" data-en="Modern Residential Villas">فيلات سكنية حديثة</div>
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ فيلات سكنية حديثة" data-en="Design and construction of modern residential villas">تصميم وتنفيذ فيلات سكنية حديثة</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="عمائر وأبراج سكنية" data-en="Residential Buildings &amp; Towers">عمائر وأبراج سكنية</div>
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ عمائر وأبراج سكنية حديثة" data-en="Design and construction of modern buildings and towers">تصميم وتنفيذ عمائر وأبراج سكنية حديثة</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="التصاميم الداخلية والديكور" data-en="Interior Design &amp; Decoration">التصاميم الداخلية والديكور</div>
+              <div class="portfolio__overlay"><span data-ar="التصاميم الداخلية والديكور" data-en="Interior design and decoration">التصاميم الداخلية والديكور</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="architectural">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="تصاميم الحدائق والمنتزهات" data-en="Parks &amp; Gardens Design">تصاميم الحدائق والمنتزهات</div>
+              <div class="portfolio__overlay"><span data-ar="تصاميم الحدائق والمنتزهات" data-en="Parks and gardens design">تصاميم الحدائق والمنتزهات</span></div>
+            </div>
+          </div>
+          <!-- Structural -->
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="أعمال الفولاذ والهناجر" data-en="Steel &amp; Hangars">أعمال الفولاذ والهناجر</div>
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ أعمال الفولاذ والهناجر" data-en="Design and construction of steel works and hangars">تصميم وتنفيذ أعمال الفولاذ والهناجر</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="خزانات المياه" data-en="Water Tanks">خزانات المياه</div>
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ خزانات المياه" data-en="Design and construction of water tanks">تصميم وتنفيذ خزانات المياه</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="الأعمال الخرسانية" data-en="Concrete Works">الأعمال الخرسانية</div>
+              <div class="portfolio__overlay"><span data-ar="تصميم وتنفيذ الأعمال الخرسانية" data-en="Design and construction of concrete works">تصميم وتنفيذ الأعمال الخرسانية</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="structural" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="إستشارات هندسية" data-en="Engineering Consultations">إستشارات هندسية</div>
+              <div class="portfolio__overlay"><span data-ar="إستشارات هندسية" data-en="Engineering consultations">إستشارات هندسية</span></div>
+            </div>
+          </div>
+          <!-- Energy -->
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="مضخات شمسية" data-en="Solar Pumps">مضخات شمسية</div>
+              <div class="portfolio__overlay"><span data-ar="مضخات شمسية" data-en="Solar pumps">مضخات شمسية</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="أنظمة طاقة شمسية" data-en="Solar Energy Systems">أنظمة طاقة شمسية</div>
+              <div class="portfolio__overlay"><span data-ar="أنظمة طاقة شمسية للمدارس والمستشفيات" data-en="Solar energy systems for schools and hospitals">أنظمة طاقة شمسية للمدارس والمستشفيات</span></div>
+            </div>
+          </div>
+          <div class="portfolio__item" data-category="energy" style="display:none;">
+            <div class="portfolio__img-wrap">
+              <div class="portfolio__placeholder" data-ar="لوحات كهربائية" data-en="Electrical Panels">لوحات كهربائية</div>
+              <div class="portfolio__overlay"><span data-ar="أعمال اللوحات الكهربائية" data-en="Electrical panel works">أعمال اللوحات الكهربائية</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section id="featured" class="featured scroll-reveal">
+      <div class="container">
+        <h2 class="section-title section-title--light" data-ar="مشاريع تم تنفيذها" data-en="Completed Projects">مشاريع تم تنفيذها</h2>
+        <p class="featured__desc" data-ar="تنفيذ مشاريع توليد الطاقة الشمسية لمجموعة من المدارس والمراكز الصحية والمستشفيات في المهرة وحضرموت وشبوة" data-en="Implementing solar energy generation projects for schools, health centers, and hospitals in Al-Mahrah, Hadramout, and Shabwa">تنفيذ مشاريع توليد الطاقة الشمسية لمجموعة من المدارس والمراكز الصحية والمستشفيات في المهرة وحضرموت وشبوة</p>
+        <div class="featured__counters">
+          <div class="featured__counter">
+            <span class="featured__counter-num" data-target="31">0</span>
+            <span class="featured__counter-label" data-ar="مشروع" data-en="Projects">مشروع</span>
+          </div>
+          <div class="featured__counter">
+            <span class="featured__counter-num" data-target="359525">0</span>
+            <span class="featured__counter-label" data-ar="واط" data-en="Watts">واط</span>
+          </div>
+          <div class="featured__counter">
+            <span class="featured__counter-num" data-target="3">0</span>
+            <span class="featured__counter-label" data-ar="محافظات" data-en="Governorates">محافظات</span>
+          </div>
+          <div class="featured__counter">
+            <span class="featured__counter-num" data-target="6">0</span>
+            <span class="featured__counter-label" data-ar="أشهر" data-en="Months">أشهر</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section id="clients" class="clients scroll-reveal">
+      <div class="container">
+        <h2 class="section-title" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</h2>
+
+        <h3 class="clients__category" data-ar="المنظمات الدولية" data-en="International Organizations">المنظمات الدولية</h3>
+        <div class="clients__grid grid grid--4 scroll-reveal-stagger">
+          <div class="client-logo"><span>FAO</span></div>
+          <div class="client-logo"><span>UNOPS</span></div>
+          <div class="client-logo"><span>WFP</span></div>
+          <div class="client-logo"><span>UNHCR</span></div>
+          <div class="client-logo"><span>CARE</span></div>
+          <div class="client-logo"><span>ZOA</span></div>
+          <div class="client-logo"><span>BFD</span></div>
+          <div class="client-logo"><span>ADRA</span></div>
+          <div class="client-logo"><span>OMB-Y</span></div>
+          <div class="client-logo"><span>IRC</span></div>
+          <div class="client-logo"><span>Islamic Relief</span></div>
+          <div class="client-logo"><span>Oxfam</span></div>
+          <div class="client-logo"><span>SFD</span></div>
+          <div class="client-logo"><span>ARD</span></div>
+        </div>
+
+        <h3 class="clients__category" data-ar="القطاع الخاص" data-en="Private Sector">القطاع الخاص</h3>
+        <div class="clients__grid grid grid--4 scroll-reveal-stagger">
+          <div class="client-logo"><span data-ar="الكبوس" data-en="Al-Kbous">الكبوس</span></div>
+          <div class="client-logo"><span data-ar="العقيق" data-en="Al-Aqeeq">العقيق</span></div>
+          <div class="client-logo"><span data-ar="سمارت سكان" data-en="SmartScan">سمارت سكان</span></div>
+          <div class="client-logo"><span data-ar="المختبرات الدولية الحديثة" data-en="Modern International Labs">المختبرات الدولية الحديثة</span></div>
+          <div class="client-logo"><span data-ar="تجدد" data-en="Tagadod">تجدد</span></div>
+          <div class="client-logo"><span data-ar="باور سيتي" data-en="Power City">باور سيتي</span></div>
+          <div class="client-logo"><span data-ar="مؤسسة القسم للتجارة" data-en="Al-Qasm Trading">مؤسسة القسم للتجارة</span></div>
+          <div class="client-logo"><span data-ar="نيو لاب" data-en="New Lab">نيو لاب</span></div>
+          <div class="client-logo"><span data-ar="سام سكان" data-en="Sam Scan">سام سكان</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section id="safety" class="safety scroll-reveal">
+      <div class="container container--narrow">
+        <div class="safety__header">
+          <svg class="safety__icon" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="var(--color-teal)" stroke-width="2" aria-hidden="true">
+            <path d="M24 4L6 12v12c0 11 8 18 18 22 10-4 18-11 18-22V12L24 4z"/>
+            <polyline points="16,24 22,30 32,18"/>
+          </svg>
+          <h2 class="section-title" data-ar="الأمن والسلامة المهنية" data-en="Occupational Health &amp; Safety">الأمن والسلامة المهنية</h2>
+        </div>
+        <p class="safety__text" data-ar="تعرف السلامة المهنية بأنها مجموعة الأنظمة والإجراءات والتدابير التي تؤدي إلى توفير الحماية المهنية للعاملين والحد من خطر المعدات والآلات على العمال والمنشآت سعياً لمنع وقوع حوادث أو التقليل من حدوثها, وتوفير الجو المهني السليم الذي يساعد العمال على العمل، وهذا يعتبر هدفنا الرئيسي ومانسعى الى تحقيقه من خلال الإلتزام وتطبيق معايير ووسائل السلامة المهنية." data-en="Occupational safety is defined as the set of systems, procedures, and measures that provide professional protection for workers and reduce the risk of equipment and machinery to workers and facilities, aiming to prevent or minimize accidents, and to provide a healthy professional environment that helps workers perform their duties. This is our primary goal, which we strive to achieve through commitment to and application of occupational safety standards and practices.">تعرف السلامة المهنية بأنها مجموعة الأنظمة والإجراءات والتدابير التي تؤدي إلى توفير الحماية المهنية للعاملين والحد من خطر المعدات والآلات على العمال والمنشآت سعياً لمنع وقوع حوادث أو التقليل من حدوثها, وتوفير الجو المهني السليم الذي يساعد العمال على العمل، وهذا يعتبر هدفنا الرئيسي ومانسعى الى تحقيقه من خلال الإلتزام وتطبيق معايير ووسائل السلامة المهنية.</p>
+        <div class="safety__icons">
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="var(--color-teal)" stroke-width="1.5" aria-label="خوذة سلامة"><path d="M6 20h20M8 20c0-8 3-14 8-14s8 6 8 14M6 20v4h20v-4"/></svg>
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="var(--color-teal)" stroke-width="1.5" aria-label="سترة سلامة"><path d="M10 8h12v20H10zM10 8L6 12v16h4M22 8l4 4v16h-4M14 14v6M18 14v6"/></svg>
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="var(--color-teal)" stroke-width="1.5" aria-label="علامة تحذير"><path d="M16 4L2 28h28L16 4zM16 12v8M16 24v1"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact scroll-reveal">
+      <div class="container">
+        <h2 class="section-title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
+        <p class="contact__intro" data-ar="نسعد بتواصلكم ونرحب باستفساراتكم. فريقنا جاهز لمساعدتكم في تحقيق مشاريعكم." data-en="We are happy to hear from you and welcome your inquiries. Our team is ready to help you realize your projects.">نسعد بتواصلكم ونرحب باستفساراتكم. فريقنا جاهز لمساعدتكم في تحقيق مشاريعكم.</p>
+        <div class="contact__layout">
+          <div class="contact__info">
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span data-ar="هاتف: 575 686 1 967+" data-en="Phone: +967 1 686 575">هاتف: 575 686 1 967+</span>
+            </div>
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              <span data-ar="جوال: 776566575 967+" data-en="Mobile: +967 776566575">جوال: 776566575 967+</span>
+            </div>
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@arec-ye.com">info@arec-ye.com</a>
+            </div>
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span data-ar="اليمن - صنعاء - بيت بوس - شارع الخمسين - مبنى بنك IBY" data-en="Yemen - Sanaa - Baitboos - 50th St. - IBY Bank Building">اليمن - صنعاء - بيت بوس - شارع الخمسين - مبنى بنك IBY</span>
+            </div>
+            <div class="contact__map-placeholder" data-ar="خريطة الموقع" data-en="Location Map">
+              <!-- TODO: Google Maps iframe -->
+              خريطة الموقع
+            </div>
+          </div>
+          <form class="contact__form" action="mailto:info@arec-ye.com" method="POST" enctype="text/plain">
+            <div class="contact__field">
+              <label for="name" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+              <input type="text" id="name" name="name" required data-ar-placeholder="أدخل اسمك الكامل" data-en-placeholder="Enter your full name" placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="contact__field">
+              <label for="email" data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" required data-ar-placeholder="أدخل بريدك الإلكتروني" data-en-placeholder="Enter your email" placeholder="أدخل بريدك الإلكتروني">
+            </div>
+            <div class="contact__field">
+              <label for="phone" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+              <input type="tel" id="phone" name="phone" data-ar-placeholder="أدخل رقم هاتفك" data-en-placeholder="Enter your phone number" placeholder="أدخل رقم هاتفك">
+            </div>
+            <div class="contact__field">
+              <label for="message" data-ar="الرسالة" data-en="Message">الرسالة</label>
+              <textarea id="message" name="message" rows="5" required data-ar-placeholder="اكتب رسالتك هنا..." data-en-placeholder="Write your message here..." placeholder="اكتب رسالتك هنا..."></textarea>
+            </div>
+            <button type="submit" class="contact__submit" data-ar="إرسال" data-en="Send">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="footer__logo-a">A</span><span class="footer__logo-rec">REC</span>
+          </div>
+          <p class="footer__tagline" data-ar="أريك للهندسة والمقاولات" data-en="AREC Constructions &amp; Engineering">أريك للهندسة والمقاولات</p>
+        </div>
+        <div class="footer__links">
+          <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+          <ul>
+            <li><a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a></li>
+            <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+            <li><a href="#portfolio" data-ar="أعمالنا" data-en="Portfolio">أعمالنا</a></li>
+            <li><a href="#clients" data-ar="عملاؤنا" data-en="Clients">عملاؤنا</a></li>
+            <li><a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h4>
+          <p>+967 1 686 575</p>
+          <p>+967 776566575</p>
+          <p><a href="mailto:info@arec-ye.com">info@arec-ye.com</a></p>
+          <p data-ar="اليمن - صنعاء - بيت بوس" data-en="Yemen - Sanaa - Baitboos">اليمن - صنعاء - بيت بوس</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-ar="© 2025 أريك للهندسة والمقاولات. جميع الحقوق محفوظة." data-en="© 2025 AREC Constructions &amp; Engineering. All rights reserved.">© 2025 أريك للهندسة والمقاولات. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى" style="display:none;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 </body>
 </html>
