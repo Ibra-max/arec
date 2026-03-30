@@ -42,7 +42,7 @@
       </ul>
 
       <!-- Language Toggle -->
-      <div class="nav__lang">
+      <div class="nav__lang" dir="ltr">
         <button class="lang-btn active" data-lang="ar" aria-label="العربية">AR</button>
         <span class="nav__lang-sep">|</span>
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
@@ -60,12 +60,28 @@
   <main id="main">
     <!-- Hero Section -->
     <section id="hero" class="hero">
-      <div class="hero__paths hero__paths--left" aria-hidden="true"></div>
-      <div class="hero__paths hero__paths--right" aria-hidden="true"></div>
+      <div id="heroPaths" class="hero__paths" aria-hidden="true"></div>
       <div class="hero__content">
         <div class="hero__logo-wrap hero-anim hero-anim--logo">
-          <div class="hero__logo-text" aria-label="AREC">
-            <span class="hero__logo-letter">A</span><span class="hero__logo-letter">R</span><span class="hero__logo-letter">E</span><span class="hero__logo-letter">C</span>
+          <div dir="ltr" style="display: inline-flex;">
+            <svg viewBox="0 0 250 80" width="250" height="80" class="hero__logo-svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <mask id="cutA">
+                  <rect width="100%" height="100%" fill="white" />
+                  <path d="M 25 20 L 45 70" stroke="black" stroke-width="4" />
+                </mask>
+                <mask id="cutC">
+                  <rect width="100%" height="100%" fill="white" />
+                  <path d="M 190 20 Q 200 45 195 70 Q 180 50 190 20" fill="black" />
+                </mask>
+              </defs>
+              <text x="50%" y="60" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="800" font-size="64" fill="var(--color-white)" letter-spacing="1">
+                <tspan mask="url(#cutA)">A</tspan>
+                <tspan>R</tspan>
+                <tspan>E</tspan>
+                <tspan mask="url(#cutC)">C</tspan>
+              </text>
+            </svg>
           </div>
         </div>
         <h1 class="hero__title hero-anim hero-anim--title" data-ar="للهندسة والمقاولات" data-en="Constructions &amp; Engineering">للهندسة والمقاولات</h1>
@@ -467,11 +483,11 @@
           <div class="contact__info">
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              <span data-ar="هاتف:" data-en="Phone:"></span> <a href="tel:+96716865575" class="phone-number" dir="ltr">+967 1 686 575</a>
+              <span data-ar="هاتف:" data-en="Phone:"></span> <a href="tel:+96716865575" class="phone-number" dir="ltr"><bdi dir="ltr">+967 1 686 575</bdi></a>
             </div>
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-              <span data-ar="جوال:" data-en="Mobile:"></span> <a href="tel:+967776566575" class="phone-number" dir="ltr">+967 776566575</a>
+              <span data-ar="جوال:" data-en="Mobile:"></span> <a href="tel:+967776566575" class="phone-number" dir="ltr"><bdi dir="ltr">+967 776566575</bdi></a>
             </div>
             <div class="contact__info-item">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -532,8 +548,8 @@
         </div>
         <div class="footer__contact">
           <h4 data-ar="معلومات التواصل" data-en="Contact Info">معلومات التواصل</h4>
-          <p><a href="tel:+96716865575" class="phone-number" dir="ltr">+967 1 686 575</a></p>
-          <p><a href="tel:+967776566575" class="phone-number" dir="ltr">+967 776566575</a></p>
+          <p><a href="tel:+96716865575" class="phone-number" dir="ltr"><bdi dir="ltr">+967 1 686 575</bdi></a></p>
+          <p><a href="tel:+967776566575" class="phone-number" dir="ltr"><bdi dir="ltr">+967 776566575</bdi></a></p>
           <p><a href="mailto:info@arec-ye.com" class="email-address" dir="ltr">info@arec-ye.com</a></p>
           <p data-ar="اليمن - صنعاء - بيت بوس" data-en="Yemen - Sanaa - Baitboos">اليمن - صنعاء - بيت بوس</p>
         </div>

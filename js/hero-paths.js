@@ -30,6 +30,7 @@
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('viewBox', '0 0 696 316');
     svg.setAttribute('fill', 'none');
+    svg.setAttribute('preserveAspectRatio', 'none'); // Crucial fix for desktop large monitors
     svg.classList.add('hero__paths-svg');
 
     var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
@@ -73,11 +74,12 @@
     });
   }
 
-  var leftContainer = document.querySelector('.hero__paths--left');
-  var rightContainer = document.querySelector('.hero__paths--right');
+  var pathsContainer = document.getElementById('heroPaths');
 
-  if (leftContainer) createSVG(leftContainer, 1);
-  if (rightContainer) createSVG(rightContainer, -1);
+  if (pathsContainer) {
+    createSVG(pathsContainer, 1);
+    createSVG(pathsContainer, -1);
+  }
 
   // Letter-by-letter title animation (initial load)
   var titleEl = document.querySelector('.hero__title');
