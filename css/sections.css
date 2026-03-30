@@ -797,7 +797,6 @@
 .clients__track {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
   width: max-content;
   will-change: transform;
 }
@@ -838,9 +837,12 @@
   border: 1px solid var(--color-gray-200);
   border-radius: var(--border-radius-sm);
   padding: var(--space-3);
-  filter: grayscale(100%);
-  opacity: 0.6;
-  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+  margin-inline-end: var(--space-8);
+  transition: transform 0.3s ease;
+}
+
+.client-logo:hover {
+  transform: scale(1.05);
 }
 
 .client-logo img {
